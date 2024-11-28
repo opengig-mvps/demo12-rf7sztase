@@ -1,217 +1,231 @@
-"use client";
+'use client';
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import {
-  Mail,
-  User,
-  BookOpen,
-  VideoIcon,
-  DollarSign,
-  ArrowRight,
-} from "lucide-react";
-import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { VideoIcon, DollarSign, FileText } from "lucide-react";
 
 const LandingPage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-[100dvh] bg-gradient-to-b from-[#f5f7fa] to-[#c3cfe2]">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
-                    Revolutionize Your Learning Experience
+                  <h1 className="text-4xl font-bold tracking-tighter text-gray-800 sm:text-5xl xl:text-6xl/none">
+                    Revolutionize Your Health with Shared Medical Appointments
                   </h1>
-                  <p className="max-w-xl md:text-xl">
-                    Our platform brings tutors and students together for an
-                    interactive and immersive educational journey.
+                  <p className="max-w-[600px] text-gray-600 md:text-xl">
+                    Connect with board-certified Lifestyle Medicine doctors to reverse chronic conditions like diabetes, hypertension, and obesity.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 sm:flex-row">
-                  <Button className="bg-white text-blue-600 hover:bg-gray-200">
-                    Get Started
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="text-white border-white hover:bg-white hover:text-blue-600"
-                  >
-                    Learn More
-                  </Button>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Button className="h-10 bg-[#3b82f6] text-white px-8">Book Appointment</Button>
+                  <Button className="h-10 border border-gray-300 text-gray-800 px-8">Learn More</Button>
                 </div>
               </div>
-              <Image
-                src="https://picsum.photos/seed/picsum/200/300"
-                alt="Learning"
-                width={400}
-                height={600}
-                className="mx-auto w-full rounded-xl lg:order-last"
+              <img
+                src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
+                alt="Hero"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
               />
             </div>
           </div>
         </section>
-
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
+          <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Core Features
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Explore the powerful features designed to enhance the
-                educational experience for both tutors and students.
-              </p>
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter text-gray-800 sm:text-5xl">
+                  Seamless Integrations
+                </h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Our platform supports telehealth video conferencing, payment processing, and electronic health records.
+                </p>
+              </div>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 py-12">
-              <Card>
-                <CardHeader>
-                  <User className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>User Authentication</CardTitle>
-                  <CardDescription>
-                    Email and Password Login/Signup
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Secure accounts for students and tutors with essential login
-                    and signup capabilities.
+            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+              <div className="flex flex-col items-center justify-center space-y-4">
+                <VideoIcon className="h-12 w-12 text-blue-500" />
+                <div className="space-y-1 text-center">
+                  <h3 className="text-lg font-bold">Telehealth Conferencing</h3>
+                  <p className="text-gray-600">
+                    Connect with doctors from the comfort of your home via secure video calls.
                   </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <BookOpen className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Course Management</CardTitle>
-                  <CardDescription>Create and View Courses</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Tutors can create and manage their courses with flexible
-                    scheduling and detailed descriptions.
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center space-y-4">
+                <DollarSign className="h-12 w-12 text-green-500" />
+                <div className="space-y-1 text-center">
+                  <h3 className="text-lg font-bold">Payment Processing</h3>
+                  <p className="text-gray-600">
+                    Effortlessly manage all transactions with our integrated payment solutions.
                   </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <VideoIcon className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Zoom Link Access</CardTitle>
-                  <CardDescription>Controlled Access</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Secure Zoom access ensures only enrolled students can join
-                    the class sessions.
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center space-y-4">
+                <FileText className="h-12 w-12 text-purple-500" />
+                <div className="space-y-1 text-center">
+                  <h3 className="text-lg font-bold">Electronic Health Records</h3>
+                  <p className="text-gray-600">
+                    Access and update your medical records securely and easily.
                   </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <DollarSign className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Payment Processing</CardTitle>
-                  <CardDescription>Secure Transactions</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    Integrated payment solutions ensure seamless and secure
-                    transactions for course enrollments.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <User className="h-12 w-12 mx-auto text-blue-600" />
-                  <CardTitle>Student Dashboard</CardTitle>
-                  <CardDescription>Enrolled Courses Overview</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    A personalized dashboard for students to monitor and access
-                    their enrolled courses easily.
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container mx-auto px-4 md:px-6">
+          <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Frequently Asked Questions
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Find answers to common questions and learn more about our
-                platform’s capabilities.
-              </p>
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter text-gray-800 sm:text-5xl">
+                  Track Your Health Progress
+                </h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Use personalized dashboards to monitor your health journey and set goals.
+                </p>
+              </div>
             </div>
-            <div className="mx-auto max-w-3xl py-12">
-              <Accordion type="single" collapsible>
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>
-                    How do I sign up as a tutor?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Tutors can sign up using their email and password and start
-                    creating courses immediately.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>
-                    How can students enroll in courses?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Students can browse available courses and enroll by
-                    proceeding to the payment page.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>
-                    What payment methods are supported?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    We support various payment methods to ensure a smooth
-                    enrollment experience for all users.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+            <div className="grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 mx-auto">
+              <Card className="flex flex-col items-start space-y-4 p-6">
+                <CardHeader>
+                  <Avatar>
+                    <AvatarImage src="https://picsum.photos/seed/picsum/200/300" alt="User" />
+                    <AvatarFallback>AD</AvatarFallback>
+                  </Avatar>
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className="text-xl font-bold">Anna Doe</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    "Thanks to the shared medical appointments, I have reversed my diabetes and feel healthier than ever."
+                  </CardDescription>
+                </CardContent>
+              </Card>
+              <Card className="flex flex-col items-start space-y-4 p-6">
+                <CardHeader>
+                  <Avatar>
+                    <AvatarImage src="https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY" alt="User" />
+                    <AvatarFallback>JS</AvatarFallback>
+                  </Avatar>
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className="text-xl font-bold">John Smith</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    "The personalized health dashboard keeps me motivated and on track with my fitness goals."
+                  </CardDescription>
+                </CardContent>
+              </Card>
+              <Card className="flex flex-col items-start space-y-4 p-6">
+                <CardHeader>
+                  <Avatar>
+                    <AvatarImage src="https://picsum.photos/seed/picsum/200/300" alt="User" />
+                    <AvatarFallback>MD</AvatarFallback>
+                  </Avatar>
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className="text-xl font-bold">Michael Doe</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    "I appreciate the secure access to my medical records and the ability to communicate with my doctors."
+                  </CardDescription>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
-
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container mx-auto px-4 md:px-6">
+          <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Join Us Today
-              </h2>
-              <p className="max-w-xl md:text-lg">
-                Begin your journey with our innovative learning management
-                platform. Sign up now and explore endless learning
-                possibilities!
-              </p>
-              <Button className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 text-lg">
-                Sign Up Now
-              </Button>
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter text-gray-800 sm:text-5xl">
+                  Pricing Plans
+                </h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Select a plan that suits your healthcare needs and budget.
+                </p>
+              </div>
+              <div className="grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 mx-auto">
+                <Card className="flex flex-col items-start space-y-4 p-6 bg-blue-50">
+                  <CardHeader>
+                    <CardTitle className="text-2xl font-bold">Basic</CardTitle>
+                    <CardDescription className="text-gray-500">
+                      $10<span className="text-xl font-medium">/mo</span>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-gray-700">
+                      <li>Access to shared appointments</li>
+                      <li>Basic telehealth support</li>
+                      <li>Health progress tracking</li>
+                    </ul>
+                  </CardContent>
+                  <Button className="w-full bg-[#3b82f6] text-white">Get Started</Button>
+                </Card>
+                <Card className="flex flex-col items-start space-y-4 p-6 bg-green-50">
+                  <CardHeader>
+                    <CardTitle className="text-2xl font-bold">Standard</CardTitle>
+                    <CardDescription className="text-gray-500">
+                      $25<span className="text-xl font-medium">/mo</span>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-gray-700">
+                      <li>Everything in Basic</li>
+                      <li>Advanced telehealth support</li>
+                      <li>Priority customer support</li>
+                    </ul>
+                  </CardContent>
+                  <Button className="w-full bg-[#3b82f6] text-white">Get Started</Button>
+                </Card>
+                <Card className="flex flex-col items-start space-y-4 p-6 bg-purple-50">
+                  <CardHeader>
+                    <CardTitle className="text-2xl font-bold">Premium</CardTitle>
+                    <CardDescription className="text-gray-500">
+                      $50<span className="text-xl font-medium">/mo</span>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-gray-700">
+                      <li>Everything in Standard</li>
+                      <li>Unlimited appointments</li>
+                      <li>Dedicated health coach</li>
+                    </ul>
+                  </CardContent>
+                  <Button className="w-full bg-[#3b82f6] text-white">Get Started</Button>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
       </main>
+      <footer className="bg-gray-800 p-6 md:py-12 w-full">
+        <div className="container max-w-7xl grid grid-cols-1 gap-8 text-sm text-white md:grid-cols-3">
+          <div className="grid gap-1">
+            <h3 className="font-semibold">Company</h3>
+            <a href="#" className="hover:text-gray-400">About Us</a>
+            <a href="#" className="hover:text-gray-400">Careers</a>
+            <a href="#" className="hover:text-gray-400">Blog</a>
+            <a href="#" className="hover:text-gray-400">Contact</a>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="font-semibold">Resources</h3>
+            <a href="#" className="hover:text-gray-400">Help Center</a>
+            <a href="#" className="hover:text-gray-400">Privacy Policy</a>
+            <a href="#" className="hover:text-gray-400">Terms of Service</a>
+            <a href="#" className="hover:text-gray-400">Community</a>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="font-semibold">Follow Us</h3>
+            <a href="#" className="hover:text-gray-400">Facebook</a>
+            <a href="#" className="hover:text-gray-400">Twitter</a>
+            <a href="#" className="hover:text-gray-400">Instagram</a>
+            <a href="#" className="hover:text-gray-400">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
-};
+}
 
 export default LandingPage;
